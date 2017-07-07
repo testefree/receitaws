@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>receitaws</title>
+
+	<style type="text/css">
+
+		body {
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+	<img src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo" width="10%" height="10%" /><br />
+	<form name="cadastro" action='establishments' method="post" enctype="multipart/form-data" onsubmit="return validaFormCad()">    
+    <div align="left" id="formulario" >
+         <fieldset>
+         <legend>Teste de Cadastro de Estabelecimento</legend>
+
+          <label for="nome">Nome do Estabelecimento:</label>
+          <input type="text" name="nome" id="nome" size="40" /> <br/>
+          <label for="cnpj">CNPJ:</label>
+          <input type="text" name="cnpj" id="cnpj" size="20" /> <br/>
+
+          <label for="naturezaJuridica">Natureza Juridica:</label>
+          <input type="text" name="naturezaJuridica" id="naturezaJuridica" size="20" /> <br/>
+
+          <label for="situacao">Situacao:</label>
+          <input type="text" name="situacao" id="situacao" size="20" /> <br/>
+          </fieldset>
+                   
+         <!--fieldset>
+         <input type="hidden" name="MAX_FILE_SIZE" value="200000">
+         <p align=center>Arquivo: <input type="file" name="arquivo" size="30"> 
+         </--fieldset!-->
+         <br />&nbsp;&nbsp;         
+         <input type=submit value="Enviar">
+         <input type="reset" name="reset" value="Limpar">
+
+</form>
+</body>
+</html>

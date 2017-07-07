@@ -73,6 +73,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
       <Private>True</Private>
@@ -82,6 +83,7 @@
       <HintPath>..\packages\Nancy.Hosting.Aspnet.1.4.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -95,10 +97,21 @@
   <ItemGroup>
     <Content Include="Content\nancy-logo.png" />
     <Content Include="icon.png" />
+    <Content Include="receitaws.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Entity\Estabelecimento.cs" />
+    <Compile Include="Entity\PagamentoEstabelecimento.cs" />
+    <Compile Include="Entity\Pagamento.cs" />
+    <Compile Include="Entity\Cliente.cs" />
+    <Compile Include="Modules\CadEstabelecimentoModulesy.cs" />
+    <Compile Include="Modules\CadPagamentoModules.cs" />
+    <Compile Include="Modules\CadClienteModules.cs" />
+    <Compile Include="Modules\EstabelecimentoModel.cs" />
+    <Compile Include="Modules\PagamentoModules.cs" />
+    <Compile Include="Modules\ClienteModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +124,15 @@
     </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\cadCliente.sshtml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\cadEstabelecimento.sshtml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\cadPagamento.sshtml">
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>receitaws</title>
+
+	<style type="text/css">
+
+		body {
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+	<img src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo" width="10%" height="10%" /><br />
+	<form name="cadastro" action='clients' method="post" enctype="multipart/form-data" onsubmit="return validaFormCad()">    
+    <div align="left" id="formulario" >
+         <fieldset>
+         <legend>Teste de Cadastro de Cliente</legend>
+
+          <label for="nome">Nome do Cliente:</label>
+          <input type="text" name="nome" id="nome" size="40"  /> <br/>
+          <label for="cpf">CPF:</label>
+          <input type="text" name="cpf" id="cpf" size="20" <br/>
+          <label for="dtNascimento">Data de Nascimento:</label>
+          <input type="text" name="dtNascimento" id="dtNascimento" size="20"  /> <br/>
+
+          <label for="numCartao">Número do Cartão:</label>
+          <input type="text" name="numCartao" id="numCartao" size="20" <br/>
+          </fieldset>
+                   
+         <!--fieldset>
+         <input type="hidden" name="MAX_FILE_SIZE" value="200000">
+         <p align=center>Arquivo: <input type="file" name="arquivo" size="30"> 
+         </--fieldset!--> 
+         <br />&nbsp;&nbsp;
+         <input type=submit value="Enviar">
+         <input type="reset" name="reset" value="Limpar">
+
+</form>
+</body>
+</html>
