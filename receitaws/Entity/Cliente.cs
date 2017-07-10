@@ -11,8 +11,8 @@ namespace receitaws.Entity
         public Int64 id { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
-        public DateTime dtNascimento { get; set; }
-        public int numCartao { get; set; }
+        public DateTime dt_nascimento { get; set; }
+        public int num_cartao { get; set; }
     }
 
 }

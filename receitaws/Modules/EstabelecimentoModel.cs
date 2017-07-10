@@ -36,7 +36,7 @@ namespace receitaws.Modules
                         estabelecimento.id = (Int64)item["id"];
                         estabelecimento.nome = item["nome"].ToString();
                         estabelecimento.cnpj = item["cnpj"].ToString();
-                        estabelecimento.naturezaJuridica = item["natureza_juridica"].ToString();
+                        estabelecimento.natureza_juridica = item["natureza_juridica"].ToString();
                         estabelecimento.situacao = item["situacao"].ToString();
                         estabelecimentos.Add(estabelecimento);
                     }
@@ -67,7 +67,7 @@ namespace receitaws.Modules
                         estabelecimento.id = (Int64)item["id"];
                         estabelecimento.nome = item["nome"].ToString();
                         estabelecimento.cnpj = item["cnpj"].ToString();
-                        estabelecimento.naturezaJuridica = item["natureza_juridica"].ToString();
+                        estabelecimento.natureza_juridica = item["natureza_juridica"].ToString();
                         estabelecimento.situacao = item["situacao"].ToString();
                         estabelecimentos.Add(estabelecimento);
                     }
@@ -107,7 +107,7 @@ namespace receitaws.Modules
                     cmd.Parameters.AddWithValue("@param1", estabelecimentotRequest.id);
                     cmd.Parameters.AddWithValue("@param2", estabelecimentotRequest.nome);
                     cmd.Parameters.AddWithValue("@param3", estabelecimentotRequest.cnpj);
-                    cmd.Parameters.AddWithValue("@param4", estabelecimentotRequest.naturezaJuridica);
+                    cmd.Parameters.AddWithValue("@param4", estabelecimentotRequest.natureza_juridica);
                     cmd.Parameters.AddWithValue("@param5", estabelecimentotRequest.situacao);
 
                     cmd.ExecuteNonQuery();

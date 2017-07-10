@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>receitaws</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<style type="text/css">
 
@@ -20,17 +21,19 @@
          <fieldset>
          <legend>Teste de Cadastro de Pagamento</legend>
 
-          <label for="id_estabelecimento">Id Estabelecimento:</!--label>
-          <input type="text" name="id_estabelecimento" id="id_estabelecimento" size="40" /> <br/>
+          <label for="id_estabelecimento">Estabelecimento:</!--label>
+          <select  id="id_estabelecimento" name="id_estabelecimento"  ></select>
+          <!--input type="text" name="id_estabelecimento" id="id_estabelecimento" size="40" /--> <br/>
 
-          <label for="id_cliente">Id Cliente:</!--label>
-          <input type="text" name="id_cliente" id="id_cliente" size="20" /> <br/>
+          <label for="id_cliente">Cliente:</!--label>
+          <select  id="id_cliente" name="id_cliente"></select>
+          <!--input type="text" name="id_cliente" id="id_cliente" size="20" /--> <br/>
 
           <label for="valor">Valor:</label>
           <input type="text" name="valor" id="valor" size="20"  /> <br/>
 
-          <label for="dtPagamento">Data do Pagamento:</label>
-          <input type="text" name="dtPagamento" id="dtPagamento" size="20"  /> <br/>
+          <label for="dt_pagamento">Data do Pagamento:</label>
+          <input type="text" name="dt_pagamento" id="dt_pagamento" size="20"  /> <br/>
 
           </fieldset>
                    
@@ -42,6 +45,54 @@
          <input type=submit value="Enviar">
          <input type="reset" name="reset" value="Limpar">
 
+         <DIV id='info' ></DIV>
+
+        
+
 </form>
 </body>
 </html>
+<script>
+
+    $(document).ready(function () {
+        $(function () {
+            jQuery.getJSON('clients', function (data) {
+                console.log(data[0].id);
+                
+                var select = $("#id_cliente");
+                select.empty();
+
+                jQuery.each(data, function (index, org_types) {
+                    var content = '<option value="' + org_types.id + '">' + org_types.nome + '</option>';
+                    select.append(content);
+                });
+            });
+        });
+        $(function () {
+            jQuery.getJSON('establishments', function (data) {
+                console.log(data[0].id);
+
+                var select = $("#id_estabelecimento");
+                select.empty();
+
+                jQuery.each(data, function (index, org_types) {
+                    var content = '<option value="' + org_types.id + '">' + org_types.nome + '</option>';
+                    select.append(content);
+                });
+            });
+        });
+
+        var data = new Date($.now()); // without jquery remove this $.now()
+        console.log(data)// Thu Jun 23 2016 15:48:24 GMT+0530 (IST)
+
+        var d = new Date,
+            dformat = [d.getFullYear(), d.getMonth() + 1,
+                       d.getDate()
+            ].join('-') + ' ' +
+                      [d.getHours(),
+                       d.getMinutes(),
+                       d.getSeconds()].join(':');
+        $("#dt_pagamento").val(dformat);
+    });
+
+</script>

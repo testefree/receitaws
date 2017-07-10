@@ -32,8 +32,8 @@ namespace receitaws.Modules
                         cliente.id = (Int64)item["id"];
                         cliente.nome = item["nome"].ToString();
                         cliente.cpf = item["cpf"].ToString();
-                        cliente.dtNascimento = DateTime.Parse(item["dt_nascimento"].ToString());
-                        cliente.numCartao = (int)item["num_cartao"];
+                        cliente.dt_nascimento = DateTime.Parse(item["dt_nascimento"].ToString());
+                        cliente.num_cartao = (int)item["num_cartao"];
                         clientes.Add(cliente);
                     }
 
@@ -48,21 +48,16 @@ namespace receitaws.Modules
                         estabelecimento.id = (Int64)item["id"];
                         estabelecimento.nome = item["nome"].ToString();
                         estabelecimento.cnpj = item["cnpj"].ToString();
-                        estabelecimento.naturezaJuridica = item["natureza_juridica"].ToString();
+                        estabelecimento.natureza_juridica = item["natureza_juridica"].ToString();
                         estabelecimento.situacao = item["situacao"].ToString();
                         estabelecimentos.Add(estabelecimento);
                     }
                     
                     mConn.Close();
-
-                    String result = clientes.ToString();
-
-                    var model = new
-                    {
-                        estabelecimentos = Response.AsJson(estabelecimentos),
-                        clientes = Response.AsJson(clientes)
-                    };
                     
+                    var model = new List<Object>();
+                    model.Add(new { est = estabelecimentos, cli = clientes });
+
                     return View["cadPagamento", model];
                 }
                 catch (InvalidCastException e)

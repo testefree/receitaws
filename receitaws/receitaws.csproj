@@ -131,9 +131,9 @@
     <Content Include="Views\cadEstabelecimento.sshtml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\cadPagamento.sshtml">
+    <None Include="Views\cadPagamento.sshtml">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -11,7 +11,7 @@ namespace receitaws.Entity
         public Int64 id { get; set; }
         public string nome { get; set; }
         public string cnpj { get; set; }
-        public string naturezaJuridica { get; set; }
+        public string natureza_juridica { get; set; }
         public string situacao { get; set; }
     }
 }

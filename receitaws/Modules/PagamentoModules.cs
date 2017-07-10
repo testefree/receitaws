@@ -72,6 +72,7 @@ namespace receitaws.Modules
                         pagamentoEstabelecimento.dt_pagamento = DateTime.Parse(item["dt_pagamento"].ToString());
                         pagamentoEstabelecimento.cancelado = (int)item["cancelado"];
                         pagamentoEstabelecimentos.Add(pagamentoEstabelecimento);
+                        System.Diagnostics.Debug.WriteLine(pagamentoEstabelecimentos.ToString());
 
                     }
                     mConn.Close();
@@ -155,7 +156,7 @@ namespace receitaws.Modules
                 {
                     Pagamento pagamentoRequest = this.Bind();
 
-                    if (pagamentoRequest == null)
+                    if (pagamentoRequest == null || pagamentoRequest.dt_pagamento == DateTime.MinValue)
                     {
                         return HttpStatusCode.Unauthorized;
                     }

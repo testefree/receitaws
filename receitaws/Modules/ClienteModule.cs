@@ -34,8 +34,8 @@ namespace receitaws.Modules
                         cliente.id = (Int64)item["id"];
                         cliente.nome = item["nome"].ToString();
                         cliente.cpf = item["cpf"].ToString();
-                        cliente.dtNascimento = DateTime.Parse(item["dt_nascimento"].ToString());
-                        cliente.numCartao = (int)item["num_cartao"];
+                        cliente.dt_nascimento = DateTime.Parse(item["dt_nascimento"].ToString());
+                        cliente.num_cartao = (int)item["num_cartao"];
                         clientes.Add(cliente);
                     }
                     mConn.Close();
@@ -71,8 +71,8 @@ namespace receitaws.Modules
                         cliente.id = (Int64)item["id"];
                         cliente.nome = item["nome"].ToString();
                         cliente.cpf = item["cpf"].ToString();
-                        cliente.dtNascimento = DateTime.Parse(item["dt_nascimento"].ToString());
-                        cliente.numCartao = (int)item["num_cartao"];
+                        cliente.dt_nascimento = DateTime.Parse(item["dt_nascimento"].ToString());
+                        cliente.num_cartao = (int)item["num_cartao"];
                         clientes.Add(cliente);
                     }
                     mConn.Close();
@@ -94,7 +94,7 @@ namespace receitaws.Modules
                 {
                     Cliente clientetRequest = this.Bind();
 
-                    if (clientetRequest == null)
+                    if (clientetRequest == null || clientetRequest.dt_nascimento == DateTime.MinValue)
                     {
                         return HttpStatusCode.Unauthorized;
                     }
@@ -111,8 +111,8 @@ namespace receitaws.Modules
                     cmd.Parameters.AddWithValue("@param1", clientetRequest.id);
                     cmd.Parameters.AddWithValue("@param2", clientetRequest.nome);
                     cmd.Parameters.AddWithValue("@param3", clientetRequest.cpf);
-                    cmd.Parameters.AddWithValue("@param4", clientetRequest.dtNascimento.ToString());
-                    cmd.Parameters.AddWithValue("@param5", clientetRequest.numCartao);
+                    cmd.Parameters.AddWithValue("@param4", clientetRequest.dt_nascimento.ToString());
+                    cmd.Parameters.AddWithValue("@param5", clientetRequest.num_cartao);
 
                     cmd.ExecuteNonQuery();
 
