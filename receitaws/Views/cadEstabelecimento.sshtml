@@ -9,14 +9,21 @@
 		body {
 			text-align: center;
 		}
+        img { 
+            width:10%; 
+            height:10%; 
+        } 
+        #formulario{
+            text-align:left; 
+        }
 
 	</style>
 
 </head>
 <body>
-	<img src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo" width="10%" height="10%" /><br />
+	<img src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo"  /><br />
 	<form name="cadastro" action='establishments' method="post" enctype="multipart/form-data" onsubmit="return validaFormCad()">    
-    <div align="left" id="formulario" >
+    <div id="formulario" >
          <fieldset>
          <legend>Teste de Cadastro de Estabelecimento</legend>
 
@@ -32,14 +39,10 @@
           <input type="text" name="situacao" id="situacao" size="20" /> <br/>
           </fieldset>
                    
-         <!--fieldset>
-         <input type="hidden" name="MAX_FILE_SIZE" value="200000">
-         <p align=center>Arquivo: <input type="file" name="arquivo" size="30"> 
-         </--fieldset!-->
          <br />&nbsp;&nbsp;         
          <input type=submit value="Enviar">
          <input type="reset" name="reset" value="Limpar">
-
+      </div>
 </form>
 </body>
 </html>

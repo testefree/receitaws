@@ -77,11 +77,11 @@ namespace receitaws.Modules
                     }
                     mConn.Close();
                     return Response.AsJson(pagamentoEstabelecimentos);
-                }catch (InvalidCastException e)
+                }catch (InvalidCastException)
                 {
                     return HttpStatusCode.NoResponse;
                 }
-                catch (MySqlException e)
+                catch (MySqlException)
                 {
                     return HttpStatusCode.NotAcceptable;
                 }
@@ -139,11 +139,11 @@ namespace receitaws.Modules
                     mConn.Close();
                     return Response.AsJson(pagamentoEstabelecimentos);
                 }
-                catch (InvalidCastException e)
+                catch (InvalidCastException)
                 {
                     return HttpStatusCode.NoResponse;
                 }
-                catch (MySqlException e)
+                catch (MySqlException)
                 {
                     return HttpStatusCode.NotAcceptable;
                 }
@@ -184,11 +184,11 @@ namespace receitaws.Modules
                     mConn.Close();
                     return Response.AsJson(pagamentoRequest, HttpStatusCode.OK );
                 }
-                catch (InvalidCastException e)
+                catch (InvalidCastException)
                 {
                     return HttpStatusCode.NoResponse;
                 }
-                catch (MySqlException e)
+                catch (MySqlException)
                 {
                     return HttpStatusCode.NotAcceptable;
                 }
@@ -223,11 +223,11 @@ namespace receitaws.Modules
                     mConn.Close();
                     return HttpStatusCode.OK;
                 }
-                catch (InvalidCastException e)
+                catch (InvalidCastException)
                 {
                     return HttpStatusCode.NoResponse;
                 }
-                catch (MySqlException e)
+                catch (MySqlException)
                 {
                     return HttpStatusCode.NotAcceptable;
                 }
