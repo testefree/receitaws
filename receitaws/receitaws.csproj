@@ -102,6 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Business\ValidaCPF.cs" />
+    <Compile Include="Business\ValidaCNPJ.cs" />
     <Compile Include="Entity\Estabelecimento.cs" />
     <Compile Include="Entity\PagamentoEstabelecimento.cs" />
     <Compile Include="Entity\Pagamento.cs" />

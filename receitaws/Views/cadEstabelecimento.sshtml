@@ -25,8 +25,8 @@
           <label for="cnpj">CNPJ:</label>
           <input type="text" name="cnpj" id="cnpj" size="20" /> <br/>
 
-          <label for="naturezaJuridica">Natureza Juridica:</label>
-          <input type="text" name="naturezaJuridica" id="naturezaJuridica" size="20" /> <br/>
+          <label for="natureza_juridica">Natureza Juridica:</label>
+          <input type="text" name="natureza_juridica" id="natureza_juridica" size="20" /> <br/>
 
           <label for="situacao">Situacao:</label>
           <input type="text" name="situacao" id="situacao" size="20" /> <br/>

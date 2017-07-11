@@ -24,8 +24,8 @@
           <input type="text" name="nome" id="nome" size="40"  /> <br/>
           <label for="cpf">CPF:</label>
           <input type="text" name="cpf" id="cpf" size="20" <br/>
-          <label for="dtNascimento">Data de Nascimento:</label>
-          <input type="text" name="dtNascimento" id="dtNascimento" size="20"  /> <br/>
+          <label for="dt_nascimento">Data de Nascimento:</label>
+          <input type="text" name="dt_nascimento" id="dt_nascimento" size="20"  /> <br/>
 
           <label for="numCartao">Número do Cartão:</label>
           <input type="text" name="numCartao" id="numCartao" size="20" <br/>

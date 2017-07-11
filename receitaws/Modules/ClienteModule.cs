@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using Nancy.ModelBinding;
 using receitaws.Entity;
+using receitaws.Business;
 
 namespace receitaws.Modules
 {
@@ -97,6 +98,11 @@ namespace receitaws.Modules
                     if (clientetRequest == null || clientetRequest.dt_nascimento == DateTime.MinValue)
                     {
                         return HttpStatusCode.Unauthorized;
+                    }
+
+                    if (!ValidaCPF.IsCpf(clientetRequest.cpf.ToString()))
+                    {
+                        return HttpStatusCode.UnsupportedMediaType;
                     }
                     //Console.WriteLine(Response.AsJson(jsonString));
 

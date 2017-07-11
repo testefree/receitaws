@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using Nancy.ModelBinding;
 using receitaws.Entity;
+using receitaws.Business;
 
 namespace receitaws.Modules
 {
@@ -94,6 +95,12 @@ namespace receitaws.Modules
                     {
                         return HttpStatusCode.Unauthorized;
                     }
+
+                    if (!ValidaCNPJ.IsCnpj(estabelecimentotRequest.cnpj.ToString()))
+                    {
+                        return HttpStatusCode.UnsupportedMediaType;
+                    }
+
                     //Console.WriteLine(Response.AsJson(jsonString));
 
                     mConn = new MySqlConnection(stringConexao);
