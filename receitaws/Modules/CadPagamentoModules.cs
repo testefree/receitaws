@@ -60,11 +60,11 @@ namespace receitaws.Modules
 
                     return View["cadPagamento", model];
                 }
-                catch (InvalidCastException e)
+                catch (InvalidCastException)
                 {
                     return HttpStatusCode.NoResponse;
                 }
-                catch (MySqlException e)
+                catch (MySqlException)
                 {
                     return HttpStatusCode.NotAcceptable;
                 }
