@@ -1,8 +1,5 @@
-﻿using Nancy;
-using NUnit.Framework;
-using Nancy.Bootstrapper;
-using Nancy.Helpers;
-using Nancy.IO;
+﻿using NUnit.Framework;
+using System.Net;
 
 namespace receitaws.Modules
 {
@@ -14,11 +11,18 @@ namespace receitaws.Modules
             [Test]
             public void ClienteGet()
             {
-                //var browser = new Browser(new Bootstrapper());
 
-                //var response = browser.Get("/clients");
+                HttpWebRequest requestChangelog = null;
+                HttpWebResponse changelogResponse = null;
 
-                //Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+                requestChangelog = (HttpWebRequest)HttpWebRequest.Create("http://localhost:51552/clients");
+                requestChangelog.Method = "GET";
+
+                changelogResponse = (HttpWebResponse)requestChangelog.GetResponse();
+
+                var Code = (int)changelogResponse.StatusCode;
+
+                Assert.That(Code, Is.EqualTo(Nancy.HttpStatusCode.OK));
             }
 
             [Test]
@@ -29,6 +33,18 @@ namespace receitaws.Modules
                 //var response = browser.Get("/clients/1");
 
                 //Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+
+                HttpWebRequest requestChangelog = null;
+                HttpWebResponse changelogResponse = null;
+
+                requestChangelog = (HttpWebRequest)HttpWebRequest.Create("http://localhost:51552/clients/1");
+                requestChangelog.Method = "GET";
+
+                changelogResponse = (HttpWebResponse)requestChangelog.GetResponse();
+
+                var Code = (int)changelogResponse.StatusCode;
+
+                Assert.That(Code, Is.EqualTo(Nancy.HttpStatusCode.OK));
             }
         }
     }
